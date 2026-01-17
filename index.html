@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>BBZO Studio</title>
+  <title>BBZO Studio — Creative & Digital Production</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     :root {
-      --bg: #0d0d0d;
-      --text: #f2f2f2;
-      --muted: #b3b3b3;
-      --card: #1a1a1a;
+      --bg: #0b0b0b;
+      --surface: #141414;
+      --surface-soft: #1b1b1b;
+      --text: #f5f5f5;
+      --muted: #a0a0a0;
       --accent: #ffffff;
+      --radius: 14px;
     }
 
     * {
@@ -21,65 +23,9 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
+      background: radial-gradient(1200px 600px at 50% -10%, #151515, var(--bg));
       color: var(--text);
       line-height: 1.6;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 64px 24px;
-    }
-
-    .logo {
-      max-width: 180px;
-      margin-bottom: 32px;
-    }
-
-    h1 {
-      font-size: 44px;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      margin-top: 64px;
-      font-size: 28px;
-      font-weight: normal;
-    }
-
-    p {
-      max-width: 720px;
-      font-size: 18px;
-      color: var(--muted);
-    }
-
-    .hero p:first-of-type {
-      color: var(--text);
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    .clients {
-      margin-top: 32px;
-    }
-
-    .client {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 8px;
     }
 
     a {
@@ -92,19 +38,132 @@
       border-bottom-color: var(--accent);
     }
 
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 96px 24px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      max-width: 820px;
+    }
+
+    .logo {
+      max-width: 160px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 64px);
+      line-height: 1.1;
+      margin: 0 0 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .hero p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    section {
+      margin-top: 120px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+
+    /* ---------- SERVICES ---------- */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+      padding: 28px;
+      border-radius: var(--radius);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      background: #1f1f1f;
+    }
+
+    .service h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* ---------- CLIENTS ---------- */
+
+    .clients {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .client {
+      background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+      padding: 28px;
+      border-radius: var(--radius);
+    }
+
+    .client strong {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .client span {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-intro {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
     form {
       max-width: 640px;
-      margin-top: 32px;
       display: grid;
       gap: 16px;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
-      padding: 14px;
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 6px;
+      padding: 16px;
+      background: #0f0f0f;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
       color: var(--text);
       font-size: 16px;
     }
@@ -118,20 +177,35 @@
       background: var(--accent);
       color: #000;
       border: none;
-      padding: 14px;
+      padding: 16px;
       font-size: 16px;
-      border-radius: 6px;
+      border-radius: 10px;
       cursor: pointer;
+      font-weight: 500;
     }
 
     button:hover {
       opacity: 0.9;
     }
 
+    /* ---------- FOOTER ---------- */
+
     .footer {
-      margin-top: 80px;
-      font-size: 14px;
+      margin-top: 140px;
+      padding-top: 32px;
+      border-top: 1px solid #222;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
       color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        margin-top: 90px;
+      }
     }
   </style>
 </head>
@@ -144,50 +218,85 @@
       <img src="bbzoLOGO.png" alt="BBZO Studio Logo" class="logo" />
 
       <h1>BBZO Studio</h1>
-      <p>One-stop creative studio for digital, visual & audio production.</p>
       <p>
-        We help brands and businesses grow without juggling multiple vendors.
-        Web, visuals, audio, and content — all in one place.
+        <strong>Creative & digital studio</strong> building high-impact websites,
+        visuals, and content for brands that want to look world-class.
+      </p>
+      <p>
+        We replace the need for multiple vendors by handling
+        <strong>web, visual, audio, and creative production</strong> under one roof.
       </p>
     </section>
 
     <!-- SERVICES -->
     <section>
-      <h2>Services</h2>
+      <h2>What We Do</h2>
       <div class="services">
-        <div class="card">Web & Digital Presence</div>
-        <div class="card">Photography & Video Production</div>
-        <div class="card">Drone Video & Photography</div>
-        <div class="card">Audio Recording & Engineering</div>
-        <div class="card">Reels, Clips & Social Content</div>
-        <div class="card">Ads, Commercials & Creative</div>
+        <div class="service">
+          <h3>Web Design & Development</h3>
+          <p>Custom, fast, modern websites designed to convert and scale.</p>
+        </div>
+        <div class="service">
+          <h3>Brand Visuals & Video</h3>
+          <p>Photography, video, and creative assets for digital platforms.</p>
+        </div>
+        <div class="service">
+          <h3>Drone Production</h3>
+          <p>Cinematic aerial visuals for events, brands, and locations.</p>
+        </div>
+        <div class="service">
+          <h3>Audio & Music Production</h3>
+          <p>Recording, engineering, and sound design in-house.</p>
+        </div>
+        <div class="service">
+          <h3>Social Content</h3>
+          <p>Short-form reels, clips, and content optimized for reach.</p>
+        </div>
+        <div class="service">
+          <h3>Ads & Commercials</h3>
+          <p>Creative direction and production for campaigns and launches.</p>
+        </div>
       </div>
     </section>
 
     <!-- CLIENTS -->
     <section>
-      <h2>Clients</h2>
+      <h2>Selected Clients</h2>
       <div class="clients">
         <div class="client">
-          <strong>Quincho</strong> — DJ & Music Producer (Joaquin)<br />
+          <strong>Quincho</strong>
+          <span>DJ & Music Producer — Website</span>
           <a href="https://www.quincho.art" target="_blank">www.quincho.art</a>
+        </div>
+
+        <div class="client">
+          <strong>WET</strong>
+          <span>Event Brand — Website</span>
+          <a href="https://www.fiestawet.com" target="_blank">www.fiestawet.com</a>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section>
-      <h2>Contact</h2>
+      <h2>Start a Project</h2>
+      <p class="contact-intro">
+        Looking for a website or creative production that actually stands out?
+        Tell us about your project.
+      </p>
+
       <form action="mailto:bbzostudio@gmail.com" method="POST" enctype="text/plain">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
-        <button type="submit">Send Message</button>
+        <textarea name="message" rows="5" placeholder="Project details" required></textarea>
+        <button type="submit">Send Inquiry</button>
       </form>
     </section>
 
+    <!-- FOOTER -->
     <div class="footer">
-      Instagram: <strong>@bbzostudio</strong>
+      <div>© BBZO Studio</div>
+      <div>Instagram: <strong>@bbzostudio</strong></div>
     </div>
 
   </div>
