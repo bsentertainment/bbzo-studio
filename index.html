@@ -10,8 +10,8 @@
       --bg: #0d0d0d;
       --text: #f2f2f2;
       --muted: #b3b3b3;
-      --accent: #ffffff;
       --card: #1a1a1a;
+      --accent: #ffffff;
     }
 
     * {
@@ -32,10 +32,15 @@
       padding: 64px 24px;
     }
 
+    .logo {
+      max-width: 180px;
+      margin-bottom: 32px;
+    }
+
     h1 {
-      font-size: 48px;
+      font-size: 44px;
+      margin-bottom: 12px;
       letter-spacing: 1px;
-      margin-bottom: 8px;
     }
 
     h2 {
@@ -46,16 +51,11 @@
 
     p {
       max-width: 720px;
-      color: var(--muted);
       font-size: 18px;
+      color: var(--muted);
     }
 
-    .hero p {
-      font-size: 20px;
-    }
-
-    .tagline {
-      margin-top: 16px;
+    .hero p:first-of-type {
       color: var(--text);
     }
 
@@ -70,7 +70,6 @@
       background: var(--card);
       padding: 20px;
       border-radius: 8px;
-      font-size: 16px;
     }
 
     .clients {
@@ -86,11 +85,47 @@
     a {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
     }
 
     a:hover {
       border-bottom-color: var(--accent);
+    }
+
+    form {
+      max-width: 640px;
+      margin-top: 32px;
+      display: grid;
+      gap: 16px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #777;
+    }
+
+    button {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
     }
 
     .footer {
@@ -104,17 +139,19 @@
 <body>
   <div class="container">
 
+    <!-- HERO -->
     <section class="hero">
+      <img src="bbzoLOGO.jpg" alt="BBZO Studio Logo" class="logo" />
+
       <h1>BBZO Studio</h1>
-      <p class="tagline">
-        One-stop creative studio for digital, visual & audio production.
-      </p>
+      <p>One-stop creative studio for digital, visual & audio production.</p>
       <p>
         We help brands and businesses grow without juggling multiple vendors.
         Web, visuals, audio, and content — all in one place.
       </p>
     </section>
 
+    <!-- SERVICES -->
     <section>
       <h2>Services</h2>
       <div class="services">
@@ -127,6 +164,7 @@
       </div>
     </section>
 
+    <!-- CLIENTS -->
     <section>
       <h2>Clients</h2>
       <div class="clients">
@@ -137,8 +175,19 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <form action="mailto:bbzostudio@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" rows="5" placeholder="Tell us about your project" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
     <div class="footer">
-      Contact: Instagram <strong>@bbzostudio</strong>
+      Instagram: <strong>@bbzostudio</strong>
     </div>
 
   </div>
